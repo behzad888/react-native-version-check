@@ -1,5 +1,4 @@
 let RNVersionCheck;
-const useExpo = !!process.env.RNVC_EXPO;
 if (process.env.RNVC_ENV === 'test') {
   RNVersionCheck = {
     country: 'ko',
@@ -7,7 +6,7 @@ if (process.env.RNVC_ENV === 'test') {
     currentBuildNumber: 1,
     currentVersion: '0.0.1',
   };
-} else if (useExpo) {
+} else {
   const { Platform } = require('react-native');
   const { Constants, Util } = require('expo');
 
@@ -36,8 +35,6 @@ if (process.env.RNVC_ENV === 'test') {
       ios: bundleIdentifier
     })
   };
-} else {
-  RNVersionCheck = require('react-native').NativeModules.RNVersionCheck;
 }
 
 const COUNTRY = RNVersionCheck.country;

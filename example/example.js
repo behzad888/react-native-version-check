@@ -4,7 +4,7 @@ import {
   Text,
   View
 } from 'react-native';
-import VersionCheck from 'react-native-version-check';
+import VersionCheck from 'react-native-version-check-expo';
 
 export default class example extends Component {
   state = {
